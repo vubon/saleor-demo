@@ -35,7 +35,7 @@ ROOT_URLCONF = 'saleor.urls'
 WSGI_APPLICATION = 'saleor.wsgi.application'
 
 ADMINS = (
-    # ('Your Name', 'your_email@example.com'),
+    ('vubon', 'vubon.roy@gmail.com'),
 )
 MANAGERS = ADMINS
 
@@ -49,8 +49,10 @@ CACHES = {'default': django_cache_url.config()}
 
 DATABASES = {
     'default': dj_database_url.config(
-        default='postgres://saleor:saleor@localhost:5432/saleor',
-        conn_max_age=600)}
+        default='postgres://postgres:saleor@localhost:5432/saleor',
+        conn_max_age=600
+    )
+}
 
 
 TIME_ZONE = 'America/Chicago'
@@ -76,7 +78,8 @@ LANGUAGES = [
     ('tr', _('Turkish')),
     ('uk', _('Ukrainian')),
     ('vi', _('Vietnamese')),
-    ('zh-hans', _('Chinese'))]
+    ('zh-hans', _('Chinese')),
+]
 LOCALE_PATHS = [os.path.join(PROJECT_ROOT, 'locale')]
 USE_I18N = True
 USE_L10N = True
@@ -157,7 +160,7 @@ TEMPLATES = [{
         'string_if_invalid': '<< MISSING VARIABLE "%s" >>' if DEBUG else ''}}]
 
 # Make this unique, and don't share it with anybody.
-SECRET_KEY = os.environ.get('SECRET_KEY')
+SECRET_KEY =  'sdfkjhdhjglkshflkdswhfkjdshfhdshfudshrfdhjs' # os.environ.get('SECRET_KEY')
 
 MIDDLEWARE = [
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -432,7 +435,8 @@ SOCIAL_AUTH_PIPELINE = [
     'social_core.pipeline.user.create_user',
     'social_core.pipeline.social_auth.associate_user',
     'social_core.pipeline.social_auth.load_extra_data',
-    'social_core.pipeline.user.user_details']
+    'social_core.pipeline.user.user_details'
+]
 
 SOCIAL_AUTH_USERNAME_IS_FULL_EMAIL = True
 SOCIAL_AUTH_USER_MODEL = AUTH_USER_MODEL
