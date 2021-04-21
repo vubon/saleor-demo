@@ -92,7 +92,7 @@ pytest==3.4.0
 python-dateutil==2.6.1    # via botocore, elasticsearch-dsl, faker, freezegun
 python3-openid==3.1.0     # via social-auth-core
 pytz==2018.3              # via babel, celery, django
-pyyaml==3.12              # via vcrpy
+pyyaml>=5.4              # via vcrpy
 redis==2.10.6             # via celery, django-redis
 requests-oauthlib==0.8.0  # via social-auth-core
 requests==2.18.4
